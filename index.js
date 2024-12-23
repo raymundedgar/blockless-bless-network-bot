@@ -819,7 +819,8 @@ async function runAll(initialRun = true) {
     try {
         if (initialRun) {
             await displayHeader();
-            useProxy = await promptUseProxy();
+            // useProxy = await promptUseProxy();
+            useProxy = false;
         }
 
         const fetch = await loadFetch();
