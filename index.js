@@ -649,7 +649,10 @@ async function registerNode(nodeId, hardwareId, ipAddress, agent, authToken) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            Origin: "https://bless.network/",
+            Referrer: "https://bless.network/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         },
         body: JSON.stringify({
             ipAddress,
@@ -678,7 +681,10 @@ async function startSession(nodeId, agent, authToken) {
     const response = await fetch(startSessionUrl, {
         method: "POST",
         headers: {
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            Origin: "https://bless.network/",
+            Referrer: "https://bless.network/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         },
         agent
     });
@@ -705,7 +711,10 @@ async function pingNode(nodeId, agent, ipAddress, authToken, pingErrorCount) {
     const response = await fetch(pingUrl, {
         method: "POST",
         headers: {
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            Origin: "https://bless.network/",
+            Referrer: "https://bless.network/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         },
         agent
     });
